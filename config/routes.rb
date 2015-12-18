@@ -16,6 +16,13 @@ Rails.application.routes.draw do
 
   get 'users/destroy'
 
+  #Sessions methods below
+
+  get 'sessions/destroy' => 'sessions#destroy', as: :destroy_session
+
+  get 'sessions/new' => 'sessions#new', as: :new_session
+
+  post 'sessions/new' => 'sessions#create', as: :create_session
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -10,28 +10,28 @@ class UsersController < ApplicationController
   end
 
   def create
+
     if User.new(user_params).save
-      #if you signed in successfully
-      flash[:success] = 'You are registered!'
+       #redicret to signed in
+      flash[:success] = 'you are registered'
       redirect_to users_path
     else
 
-      flash[:error] = 'Registration failed'
+      flash[:error] = 'registration has failed'
+
       redirect_to new_user_path
 
     end
   end
 
-  #private method for user_params.
-  private
+private
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email,:password,:password_confirmation)
   end
 
+public
 
-  public
-  #Everything below this line is public.
   def edit
   end
 
