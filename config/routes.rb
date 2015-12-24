@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'users#index'
-  resources :users
+  # resources :users
 
   get 'users/new' => 'users#new'
 
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get 'users/update'
 
-  get 'users/destroy'
+  post 'users/destroy'
 
   #Sessions methods below
 
@@ -23,6 +23,17 @@ Rails.application.routes.draw do
   get 'sessions/new' => 'sessions#new', as: :new_session
 
   post 'sessions/new' => 'sessions#create', as: :create_session
+
+  #Targets methods
+
+  get 'targets/' => 'targets#index', as: :targets
+
+  #Hikes methods
+
+  namespace :api do
+    resources :hikes, only: [:index]
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
