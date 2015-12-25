@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+
   root 'users#index'
-  # resources :users
+  resources :users
 
   get 'users/new' => 'users#new'
 
@@ -28,11 +29,16 @@ Rails.application.routes.draw do
 
   get 'targets/' => 'targets#index', as: :targets
 
-  #Hikes methods
+  #Hikes methods - API for routes. The model you interact with
 
   namespace :api do
-    resources :hikes, only: [:index]
+    resources :hikes
   end
+
+  #Reviews methods - resources (all 5), make join table for hikes/reviews
+
+  resources :reviews, only: [:index, :show, :edit, :create, :destroy]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

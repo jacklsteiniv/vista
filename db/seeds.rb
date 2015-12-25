@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+hikes = Hike.create([{
+  name: "Griffith Park Observatory Trail",
+  city: "Los Angeles",
+  state: "California",
+  zip: 90027
+  },
+  {name: "Solstice Canyon",
+   city: "Malibu",
+   state: "California",
+   zip: 90265
+  }
+
+  ])

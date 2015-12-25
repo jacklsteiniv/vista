@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def create
 
     if User.new(user_params).save
-       #redicret to signed in
+       #redirect to signed in
       flash[:success] = 'you are registered'
       redirect_to users_path
     else
