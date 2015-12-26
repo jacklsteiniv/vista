@@ -1,0 +1,10 @@
+<h2>Check out these hikes below.</h2>
+
+
+<ul id = "hikes">
+<% @hikes.each do |hike| %>
+  <p><%= hike.name %> in <%= hike.city %>, <%= hike.state %><p>
+  <%= link_to "Click to learn more", api_hike_path(hike) %>
+  <!-- -->
+<%end%>
+</ul>

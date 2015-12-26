@@ -24,6 +24,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+  end
+
 private
 
   def user_params
@@ -32,12 +35,7 @@ private
 
 public
 
-  def edit
-  end
 
-  def update
-  end
 
-  def destroy
-  end
+
 end

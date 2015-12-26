@@ -2,7 +2,10 @@ module API
   class HikesController < ApplicationController
 
     def index
-      render json: Hike.all
+      @hikes = Hike.all
+      render template: "hikes/index"
+      # render text: 'Hikes go here!', layout: true
+      # Not quite sure how to render HTML page for json model
     end
 
     def show
@@ -24,6 +27,10 @@ module API
     def hike_params
       params.require(:hike).permit(:name, :city, :state, :zip)
     end
+
+    # def destroy
+    #   @hike.destroy
+    # end
 
   end
 end

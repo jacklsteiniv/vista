@@ -1,14 +1,1 @@
-<h1>Vista</h1>
-<p>Get out there.</p>
-
-<% flash.each do |key,value| %>
-  <div class="<%= key %>" > <%= value %> </div>
-<% end %>
-
-<%= link_to "Register here!", new_user_path %>
-
-<% if current_user %>
-  <%= link_to "Logout", destroy_session_path %>
-<% else %>
-  <%= link_to "Login", new_session_path %>
-<% end %>
+<h1>Welcome to Vista! Register or log in above.</h1>

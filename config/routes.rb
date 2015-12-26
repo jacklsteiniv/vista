@@ -1,29 +1,13 @@
 Rails.application.routes.draw do
 
-  root 'users#index'
-  resources :users
+  root 'api/hikes#index'
+  resources :users, only: [:new, :create, :index, :show, :update, :destroy]
 
-  get 'users/new' => 'users#new'
-
-  post '/' => 'users#create'
-
-  ###
-
-  get 'users/show'
-
-  get 'users/edit'
-
-  get 'users/update'
-
-  post 'users/destroy'
 
   #Sessions methods below
 
-  get 'sessions/destroy' => 'sessions#destroy', as: :destroy_session
+  resources :sessions, only: [:destroy, :new, :create]
 
-  get 'sessions/new' => 'sessions#new', as: :new_session
-
-  post 'sessions/new' => 'sessions#create', as: :create_session
 
   #Targets methods
 
@@ -32,7 +16,7 @@ Rails.application.routes.draw do
   #Hikes methods - API for routes. The model you interact with
 
   namespace :api do
-    resources :hikes
+    resources :hikes, only: [:index, :show, :create, :destroy]
   end
 
   #Reviews methods - resources (all 5), make join table for hikes/reviews

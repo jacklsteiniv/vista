@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<div class="container">
 <head>
   <title>Vista</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -12,9 +11,17 @@
   <!-- Script for jquery leanModal is above. -->
 </head>
 <body>
+  <header>
+    <%= render 'layouts/nav' %>
+    <%= render 'layouts/header' %>
+  </header>
+  <div class="container">
 
 <%= yield %>
-
+  </div>
+  <footer>
+    <%= render 'layouts/footer' %>
+  </footer>
 </body>
-</div>
+
 </html>
