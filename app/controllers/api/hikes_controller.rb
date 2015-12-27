@@ -9,7 +9,9 @@ module API
     end
 
     def show
-      render json: Hike.find(params[:id])
+      #render json: Hike.find(params[:id])
+      @hike = Hike.find(params[:id])
+      render template: "hikes/show"
     end
 
     def create

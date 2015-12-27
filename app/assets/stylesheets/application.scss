@@ -25,15 +25,18 @@ $vistagrey: #C7D0D5;
   font-family: Futura;
 }
 
+.postpic {
+  width: $content-width/2;
+  border-radius: 8px;
+  margin: 30px;
+}
 body {
   background-color: $vistagrey;
 }
 
-#nav {
-  display: inline-block;
-  float: left;
-  $content-width: 1400px;
-
+.nav {
+   float: left;
+   display: inline-block;
 }
 
 h1 {

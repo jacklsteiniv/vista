@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'posts/index'
+
+  get 'posts/show'
+
   root 'api/hikes#index'
   resources :users, only: [:new, :create, :index, :show, :update, :destroy]
 
@@ -16,12 +20,12 @@ Rails.application.routes.draw do
   #Hikes methods - API for routes. The model you interact with
 
   namespace :api do
-    resources :hikes, only: [:index, :show, :create, :destroy]
+    resources :hikes, only: [:index, :show, :new, :create, :destroy]
   end
 
-  #Reviews methods - resources (all 5), make join table for hikes/reviews
+  #Posts methods - resources (all 5), make join table for hikes/reviews
 
-  resources :reviews, only: [:index, :show, :edit, :create, :destroy]
+  resources :posts, only: [:index, :show]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

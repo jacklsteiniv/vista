@@ -1,6 +1,6 @@
 <h1>Sign in below.</h1>
 
-<%= form_for @user, url: create_session_path do |f| %>
+<%= form_for @user, url: sessions_path do |f| %>
 
       <% flash.each do |key,value|  %>
          <div class="<%= key %>" > <%= value %> </div>

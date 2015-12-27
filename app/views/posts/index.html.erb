@@ -1,0 +1,14 @@
+<h1>Reviews</h1>
+<div id = "reviews">
+<% @posts.each do |post| %>
+
+  <h4>Review by User <%= post.user_id %> at datetime  </h4>
+  <!-- Connect user name here after updating relations -->
+  <img class = "postpic" src = "<%= post.img_url%>">
+  <p><%= post.text %></p>
+  <p>Upvotes:<%= post.upvotes%></p>
+  <p>Downvotes:<%= post.downvotes%></p>
+  <!-- Add button/click logic above for upvotes/downvotes -->
+<%end%>
+</div>
+<h4>Thoughts? <%= link_to "Add your review", posts_path %> </h4>
