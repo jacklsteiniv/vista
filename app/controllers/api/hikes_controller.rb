@@ -11,28 +11,15 @@ module API
       render template: "hikes/show"
     end
 
+    def about
+      render template: "hikes/about"
+    end
+
     def new
       @hike = Hike.new
       render template: "hikes/new"
     end
 
-    def create
-      if Hike.new(hike_params).save
-        redirect_to api_hikes_path
-        flash[:success] = 'You added @hike.name!'
-      else
-        render :new
-        flash[:error] = 'Sorry, we could not add that hike.'
-      end
-      # if @hike.save
-      #   render json: @hike, status: 201, location: [:api, @hike]
-      #   flash[:notice] = "You added a hike!"
-      # else
-      #   render json: hike.errors, status: 422
-      #   flash[:notice] = "Sorry, we couldn't save that hike."
-      # end
-
-    end
 
     private
 
@@ -41,6 +28,18 @@ module API
     end
 
     public
+
+    def create
+      @hike = Hike.build(hike_params[:hike])
+      if @hike.save
+        redirect_to api_hikes_path
+        flash[:success] = 'You added @hike.name!'
+      else
+        render :new
+        flash[:error] = 'Sorry, we could not add that hike.'
+      end
+
+    end
 
     def destroy
       @hike = Hike.find(params[:id])

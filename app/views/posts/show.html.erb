@@ -1,2 +1,14 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<!-- Up here, reference the hike for this post, after you make join table -->
+
+ <h4>Review by User <%= @post.user.email %> at datetime  </h4>
+  <!-- Connect user name here after updating relations -->
+  <img class = "postpic" src = "<%= @post.img_url%>">
+  <p><%= @post.text %></p>
+  <button type="button" class="btn btn-success" id = "upvotes">Upvotes:<%= @post.upvotes%></button>
+  <!-- When you click upvotes, upvotes +=1  -->
+  <button type="button" class="btn btn-danger" id = "downvotes">Downvotes:<%= @post.downvotes%></button>
+  <!-- When you click downvotes, downvotes +=1 -->
+  <!-- Add button/click logic above for upvotes/downvotes. -->
+
+<button type="button" id = "destroy-post" class="btn btn-danger"><%= link_to "Delete this post", post_path(@post.id), method: :delete %></button>
+

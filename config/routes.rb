@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   #Hikes methods - API for routes. The model you interact with
 
   namespace :api do
-    resources :hikes, only: [:index, :show, :new, :create, :destroy]
+    resources :hikes, only: [:index, :show, :about, :new, :create, :destroy]
   end
 
   #Posts methods - resources (all 5), make join table for hikes/reviews
