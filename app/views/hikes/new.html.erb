@@ -1,1 +1,27 @@
 <h1>Add a hike below!</h1>
+
+<%= form_for([:api, @hike]) do |f| %>
+<!-- Referencing the API namespace above. -->
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <!-- Build in logic for if the name already exists in database; alert and don't add -->
+  </div>
+
+  <div>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+
+  <div>
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+  </div>
+
+  <div>
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
+  </div>
+
+  <button type="button" id = "add-hike" class="btn btn-success" ><%= f.submit %></button>
+<% end %>

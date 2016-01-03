@@ -4,24 +4,30 @@ module API
     def index
       @hikes = Hike.all
       render template: "hikes/index"
-      # render text: 'Hikes go here!', layout: true
-      # Not quite sure how to render HTML page for json model
     end
 
     def show
-      #render json: Hike.find(params[:id])
       @hike = Hike.find(params[:id])
       render template: "hikes/show"
     end
 
-    def create
-      hike = Hike.new(hike_params)
+    def new
+      @hike = Hike.new
+      render template: "hikes/new"
+    end
 
-      if hike.save
-        render json: hike, status: 201, location: [:api, hike]
+    def create
+      # @hike = @user.Hike.build(hike_params)
+      @hike = Hike.new(params.require(:hike).permit(:name, :city, :state, :zip))
+
+      if @hike.save
+        render json: @hike, status: 201, location: [:api, @hike]
+        flash[:notice] = "You added a hike!"
       else
         render json: hike.errors, status: 422
+        flash[:notice] = "Sorry, we couldn't save that hike."
       end
+
     end
 
     private

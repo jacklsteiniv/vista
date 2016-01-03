@@ -5,8 +5,10 @@
   <!-- Connect user name here after updating relations -->
   <img class = "postpic" src = "<%= post.img_url%>">
   <p><%= post.text %></p>
-  <button>Upvotes:<%= post.upvotes%></button>
-  <button>Downvotes:<%= post.downvotes%></button>
+  <button type="button" class="btn btn-success" id = "upvotes">Upvotes:<%= post.upvotes%></button>
+  <!-- When you click upvotes, upvotes +=1  -->
+  <button type="button" class="btn btn-danger" id = "downvotes">Downvotes:<%= post.downvotes%></button>
+  <!-- When you click downvotes, downvotes +=1 -->
   <!-- Add button/click logic above for upvotes/downvotes. -->
 <%end%>
 </div>
