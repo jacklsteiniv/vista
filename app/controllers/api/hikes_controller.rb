@@ -17,16 +17,20 @@ module API
     end
 
     def create
-      # @hike = @user.Hike.build(hike_params)
-      @hike = Hike.new(params.require(:hike).permit(:name, :city, :state, :zip))
-
-      if @hike.save
-        render json: @hike, status: 201, location: [:api, @hike]
-        flash[:notice] = "You added a hike!"
+      if Hike.new(hike_params).save
+        redirect_to api_hikes_path
+        flash[:success] = 'You added @hike.name!'
       else
-        render json: hike.errors, status: 422
-        flash[:notice] = "Sorry, we couldn't save that hike."
+        render :new
+        flash[:error] = 'Sorry, we could not add that hike.'
       end
+      # if @hike.save
+      #   render json: @hike, status: 201, location: [:api, @hike]
+      #   flash[:notice] = "You added a hike!"
+      # else
+      #   render json: hike.errors, status: 422
+      #   flash[:notice] = "Sorry, we couldn't save that hike."
+      # end
 
     end
 
@@ -36,9 +40,14 @@ module API
       params.require(:hike).permit(:name, :city, :state, :zip)
     end
 
-    # def destroy
-    #   @hike.destroy
-    # end
+    public
+
+    def destroy
+      @hike = Hike.find(params[:id])
+      @hike.destroy
+      flash[:success] = 'You deleted @hike.name'
+      redirect_to root_path
+    end
 
   end
 end

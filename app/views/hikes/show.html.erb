@@ -4,3 +4,5 @@
 <h3>Want to explore? <%=link_to "See reviews", posts_path%></h3>
 <!-- Change path below to reflect 'new' review path -->
 <h3>Taken this hike? <%=link_to "Add a review.", posts_path%></h3>
+<!-- If you are the user who added this hike, can delete. Add auth here -->
+<button type="button" id = "destroy-hike" class="btn btn-danger"><%= link_to "Delete this hike", api_hike_path(@hike.id), method: :delete %></button>
