@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def new
@@ -13,11 +14,11 @@ class UsersController < ApplicationController
 
     if User.new(user_params).save
        #redirect to signed in
-      flash[:success] = 'you are registered'
-      redirect_to users_path
+      flash[:success] = 'Welcome to Vista!'
+      redirect_to @user
     else
 
-      flash[:error] = 'registration has failed'
+      flash[:error] = 'Sorry, registration faile'
 
       redirect_to new_user_path
 
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
 private
 
   def user_params
-    params.require(:user).permit(:email,:password,:password_confirmation)
+    params.require(:user).permit(:name, :email,:password,:password_confirmation)
   end
 
 public

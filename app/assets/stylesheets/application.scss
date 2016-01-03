@@ -51,6 +51,10 @@ textarea {
   font-family: Futura;
 }
 
+.user-page {
+  color: red;
+}
+
 .postpic {
   width: $content-width/2;
   border-radius: 8px;
@@ -86,6 +90,15 @@ footer {
 
 #add-hike, #destroy-hike, #add-post, #destroy-post {
   color: black;
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
 }
 
 // Below scss is for the leanModal for login

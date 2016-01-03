@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'posts/index'
+  # get 'posts/index'
 
-  get 'posts/show'
+  # get 'posts/show'
 
   root 'api/hikes#index'
   resources :users, only: [:new, :create, :index, :show, :update, :destroy]
