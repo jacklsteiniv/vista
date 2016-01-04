@@ -1,0 +1,8 @@
+<li>
+  <img src = "<%= user.image_url%>", size = 50>
+  <%= link_to user.name, user %>
+    | <%= link_to "delete", user, method: :delete,
+        data: { confirm: "You sure?" } %>
+</li>
+
+<!-- Note: have to only allow admins to delete users. -->
