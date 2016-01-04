@@ -15,11 +15,9 @@ class UsersController < ApplicationController
     if User.new(user_params).save
        #redirect to signed in
       flash[:success] = 'Welcome to Vista!'
-      redirect_to @user
+      redirect_to user_url(@user)
     else
-
-      flash[:error] = 'Sorry, registration faile'
-
+      flash[:error] = 'Sorry, registration failed'
       redirect_to new_user_path
 
     end
