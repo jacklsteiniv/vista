@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_secure_password
   attr_accessor :name, :email, :remember_token
 
-  before_save { self.email = email.downcase }
+  # before_save { self.email = email.downcase }
   validates :name, presence: true, length: {maximum: 50}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: 50}, uniqueness: { case_sensitive: false}, format: { with: VALID_EMAIL_REGEX }
@@ -43,6 +43,6 @@ class User < ActiveRecord::Base
   #relations to hike and post models below.
   #Need join table between hikes and posts to join USERS to HIKES
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
   has_many :hikes, through: :posts
 end
