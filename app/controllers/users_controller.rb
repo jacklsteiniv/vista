@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
 
-  before_action :logged_in_user, only: [:edit, :update, :destroy]
-  # Add :index into the above list as well - i.e. admin rights.
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :logged_in_user, only: [ :update, :destroy]
+  # Add :index, :edit into the above list as well - i.e. admin rights.
+  before_action :correct_user,   only: [:update]
+  # Add :edit above
   before_action :admin_user,     only: :destroy
 
 
