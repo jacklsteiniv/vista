@@ -6,25 +6,46 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-users = User.create([
-  {name: "Jack Stein",
-    email: "jacklsteiniv@gmail.com",
-    password: "ocosta583"}
-]),
+#Faker to use 'dummy data'
 
-hikes = Hike.create([
-  {name: "Griffith Park Observatory",
-   city: "Los Angeles",
-   state: "CA",
-   zip: 90027}
+User.create!(name:  "Example User",
+             email: "example@railstutorial.org",
+             password:              "foobar",
+             password_confirmation: "foobar")
 
-]),
+99.times do |n|
+  name  = Faker::Name.name
+  email = "example-#{n+1}@railstutorial.org"
+  password = "password"
+  User.create!(name:  name,
+               email: email,
+               password:              password,
+               password_confirmation: password)
+end
 
-posts = Post.create([
-  {user_id: 1,
-  img_url: 'http://www.seanbaello.com/wp-content/uploads/2013/02/observatory-run-31.jpg',
-  text: 'Griffith Park Observatory is a great hike. You have many paths to choose from, and an amazing view at the top. Also, a lot of dogs!'}
+# # clean out all current data
+# Hike.delete_all
+# User.delete_all
+# Post.delete_all
 
-])
+# hike1 = Hike.create!(
+#   name: "Griffith Park Observatory",
+#    city: "Los Angeles",
+#    state: "CA",
+#    zip: "90027"
+# )
+
+# users = User.create!([
+#   {name: "Jack Stein",
+#     email: "jacklsteiniv@gmail.com",
+#     password: "ocosta583"}
+# ])
+
+# posts = Post.create!([
+#   {user_id: 1,
+#   img_url: 'http://www.seanbaello.com/wp-content/uploads/2013/02/observatory-run-31.jpg',
+#   text: 'Griffith Park Observatory is a great hike. You have many paths to choose from, and an amazing view at the top. Also, a lot of dogs!'}
+
+# ])
 
 

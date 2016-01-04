@@ -1,1 +1,11 @@
-<h1>Welcome to Vista! Register or log in above.</h1>
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <img src = "<%= user.image_url%>", size = 50>
+      <%= link_to user.name, user %>
+    </li>
+  <% end %>
+</ul>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # get 'posts/show'
 
   root 'api/hikes#index'
-  resources :users, only: [:new, :create, :index, :show, :update, :destroy]
+  resources :users, only: [:new, :create, :index, :show, :edit, :update, :destroy]
 
 
   #Sessions methods below
