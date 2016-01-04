@@ -61,8 +61,8 @@ textarea {
   margin: 30px;
 }
 
-a {
-  color: $vistared;
+.btn-danger a  {
+  color: white;
 }
 
 h1 {
@@ -81,6 +81,9 @@ h1 {
   background: $vistagreen;
   opacity: 0.75;
   border: 1px solid $vistared;
+  a  {
+  color: $vistared;
+  }
 }
 
 footer {
@@ -89,7 +92,7 @@ footer {
 }
 
 #add-hike, #destroy-hike, #add-post, #destroy-post {
-  color: white;
+  color: black;
 }
 
 .gravatar {

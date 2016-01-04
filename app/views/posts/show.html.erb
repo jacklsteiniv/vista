@@ -1,7 +1,8 @@
 <!-- Up here, reference the hike for this post, after you make join table -->
 
- <h4>Review by User <%= @post.user.id %> <%= time_ago_in_words(@post.created_at) %> ago </h4>
-  <!-- Connect user name here after updating relations -->
+ <h4>Review <%= @post.id %> by User <%= @post.user.id %> <%= time_ago_in_words(@post.created_at) %> ago </h4>
+  <!-- Connect user and hike name here after updating relations -->
+  <h2>Hike </h2>
   <img class = "postpic" src = "<%= @post.img_url%>">
   <p><%= @post.content%></p>
   <button type="button" class="btn btn-success" id = "upvotes">Upvotes:<%= @post.upvotes%></button>

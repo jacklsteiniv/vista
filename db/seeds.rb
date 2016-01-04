@@ -24,38 +24,20 @@
 #                password_confirmation: password)
 # end
 
-# Hike.create!(name: "Griffith Park Observatory Trail",
-#              city: "Los Angeles",
-#              state: "CA",
-#              zip: 90027)
+Hike.create!(name: "Griffith Park Observatory Trail",
+             city: "Los Angeles",
+             state: "CA",
+             zip: 90027)
 
-Post.create!(img_url: "http://www.seanbaello.com/wp-content/uploads/2013/02/observatory-run-31.jpg",
-             user_id: 101,
-             content: "This is a great hike for people of all ages. You are rewarded with stunning views of the Los Angeles skyline, the Hollywood sign, and the ocean. Also, lots of dogs! Highly recommended.")
+# Post.create!(img_url: "http://www.seanbaello.com/wp-content/uploads/2013/02/observatory-run-31.jpg",
+#              user_id: 101,
+#              content: "This is a great hike for people of all ages. You are rewarded with stunning views of the Los Angeles skyline, the Hollywood sign, and the ocean. Also, lots of dogs! Highly recommended.")
 
 # # clean out all current data
 # Hike.delete_all
 # User.delete_all
 # Post.delete_all
 
-# hike1 = Hike.create!(
-#   name: "Griffith Park Observatory",
-#    city: "Los Angeles",
-#    state: "CA",
-#    zip: "90027"
-# )
 
-# users = User.create!([
-#   {name: "Jack Stein",
-#     email: "jacklsteiniv@gmail.com",
-#     password: "ocosta583"}
-# ])
-
-# posts = Post.create!([
-#   {user_id: 1,
-#   img_url: 'http://www.seanbaello.com/wp-content/uploads/2013/02/observatory-run-31.jpg',
-#   text: 'Griffith Park Observatory is a great hike. You have many paths to choose from, and an amazing view at the top. Also, a lot of dogs!'}
-
-# ])
 
 

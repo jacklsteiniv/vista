@@ -5,12 +5,13 @@
       <section class="user_info">
        <h1><%= @user.name %></h1>
         <br>
-       <h1>
-        <%= @user.id %>
-        <%= @user.email %>
+       <ul>
+        <li><%= @user.id %></li>
+        <li><%= @user.email %></li>
+        <li><%= @user.posts.count %> reviews</li>
         <br>
         <img class = "profpic" src = "<%= @user.image_url%>">
-      </h1>
+      </ul>
       </section>
     </aside>
   </div>

@@ -1,7 +1,8 @@
-<h1>Reviews</h1>
-<div id = "reviews">
-<% @post.each do |post| %>
+<% provide(:title, 'All reviews') %>
+<h1>All Reviews</h1>
+<ul class= "reviews">
+<% @posts.each do |post| %>
   <%= render 'posts' %>
 <%end%>
-</div>
-<h4>Thoughts? <%= link_to "Add your review", new_post_path %> </h4>
+</ul>
+<!-- <h4>Thoughts? <%= link_to "Add your review", new_post_path %> </h4> -->
