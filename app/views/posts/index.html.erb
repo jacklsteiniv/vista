@@ -1,8 +1,22 @@
-<% provide(:title, 'All reviews') %>
-<h1>All Reviews</h1>
-<ul class= "reviews">
-<% @posts.each do |post| %>
-  <%= render 'posts' %>
-<%end%>
+<% provide(:title, 'All posts') %>
+<h1>All posts</h1>
+
+<%= will_paginate %>
+
+<ul class="posts">
+  <% @posts.each do |post| %>
+    <h2>Hike ID: <%=post.hike_id %></h2>
+    <h4>Review by User <%= post.user_id %> <%= time_ago_in_words(post.created_at) %> ago </h4>
+    <img class = "postpic" src = "<%= post.img_url%>">
+    <p><%= post.content%></p>
+    <button type="button" class="btn btn-success" id = "upvotes">Upvotes:<%= post.upvotes%></button>
+    <!-- When you click upvotes, upvotes +=1  -->
+    <button type="button" class="btn btn-danger" id = "downvotes">Downvotes:<%= post.downvotes%></button>
+    <!-- When you click downvotes, downvotes +=1 -->
+    <!-- Add button/click logic above for upvotes/downvotes. -->
+
+<button type="button" id = "destroy-post" class="btn btn-danger"><%= link_to "Delete this post", post_path(post.id), method: :delete %></button>
+  <% end %>
 </ul>
-<!-- <h4>Thoughts? <%= link_to "Add your review", new_post_path %> </h4> -->
+
+<%= will_paginate %>

@@ -8,11 +8,7 @@
 
 #Faker to use 'dummy data'
 
-# User.create!(name:  "Example User",
-#              email: "example@railstutorial.org",
-#              password:              "foobar",
-#              password_confirmation: "foobar",
-#              admin: true)
+
 
 # 99.times do |n|
 #   name  = Faker::Name.name
@@ -24,14 +20,25 @@
 #                password_confirmation: password)
 # end
 
+User.delete_all
+Post.delete_all
+Hike.delete_all
+
+User.create!(name:  "Example User",
+             email: "example@railstutorial.org",
+             password:              "foobar",
+             password_confirmation: "foobar",
+             admin: true)
+
 Hike.create!(name: "Griffith Park Observatory Trail",
              city: "Los Angeles",
              state: "CA",
              zip: 90027)
 
-# Post.create!(img_url: "http://www.seanbaello.com/wp-content/uploads/2013/02/observatory-run-31.jpg",
-#              user_id: 101,
-#              content: "This is a great hike for people of all ages. You are rewarded with stunning views of the Los Angeles skyline, the Hollywood sign, and the ocean. Also, lots of dogs! Highly recommended.")
+Post.create!(img_url: "http://www.seanbaello.com/wp-content/uploads/2013/02/observatory-run-31.jpg",
+             user_id: 1,
+             content: "This is a great hike for people of all ages. You are rewarded with stunning views of the Los Angeles skyline, the Hollywood sign, and the ocean. Also, lots of dogs! Highly recommended.",
+             hike_id: 1)
 
 # # clean out all current data
 # Hike.delete_all

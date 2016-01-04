@@ -6,9 +6,11 @@
        <h1><%= @user.name %></h1>
         <br>
        <ul>
-        <li><%= @user.id %></li>
-        <li><%= @user.email %></li>
-        <li><%= @user.posts.count %> reviews</li>
+          User <%= @user.id %>
+          <br>
+          <%= @user.email %>
+          <br>
+          <%= @user.posts.count %> reviews
         <br>
         <img class = "profpic" src = "<%= @user.image_url%>">
       </ul>

@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
+
+  #Only a logged-in user can create or destroy a post.
+  before_action :logged_in_user, only: [:create, :destroy]
+
   def index
-    @posts = Post.all
+    @posts = Post.paginate(page: params[:page])
   end
 
   def show

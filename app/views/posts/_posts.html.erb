@@ -1,9 +1,0 @@
-<h4>Review <%= post.id %> by User <%= post.user.id %> <%= time_ago_in_words(post.created_at) %> ago</h4>
-  <!-- Connect user & hike name name here after updating relations -->
-  <img class = "postpic" src = "<%= post.img_url%>">
-  <p><%= post.content %></p>
-  <button type="button" class="btn btn-success" id = "upvotes">Upvotes:<%= post.upvotes%></button>
-  <!-- When you click upvotes, upvotes +=1  -->
-  <button type="button" class="btn btn-danger" id = "downvotes">Downvotes:<%= post.downvotes%></button>
-  <!-- When you click downvotes, downvotes +=1 -->
-  <!-- Add button/click logic above for upvotes/downvotes. -->
