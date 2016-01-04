@@ -1,0 +1,32 @@
+<h1>Edit your review below.</h1>
+
+<%= form_for(@post) do |f| %>
+<!-- Referencing the API namespace above. -->
+  <div>
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+    <!-- Build in logic for if the name already exists in database; alert and don't add -->
+  </div>
+
+  <div>
+    <%= f.label :hike_id %>
+    <%= f.text_field :hike_id %>
+    <!-- Build in logic for if the name already exists in database; alert and don't add -->
+  </div>
+
+  <div>
+    <%= f.label :img_url %>
+    <%= f.text_field :img_url %>
+  </div>
+
+  <div>
+    <%= f.label :content %>
+    <%= f.text_field :content, :style => "width: 300px; height: 200px" %>
+  </div>
+
+ <!--  Also, add in a label referencing the hike! I.e. review.hike
+  Once you've created the join table -->
+
+  <button type="button" id = "edit-post" class="btn btn-success" ><%= f.submit %></button>
+<% end %>
+

@@ -20,6 +20,10 @@ module API
       render template: "hikes/new"
     end
 
+    def edit
+      @hike = Hike.find(params[:id])
+      render template: "hikes/edit"
+    end
 
     private
 

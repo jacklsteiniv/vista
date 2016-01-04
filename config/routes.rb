@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   #Posts methods - resources (all 5), make join table for hikes/reviews
 
-  resources :posts, only: [:index, :show, :new, :create, :destroy]
+  resources :posts, only: [:index, :show, :new, :edit, :update, :create, :destroy]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

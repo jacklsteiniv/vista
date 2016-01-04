@@ -2,6 +2,7 @@
 
   <!-- Connect user and hike name here after updating relations -->
   <h2>Hike: <%= @post.hike_id %></h2>
+  <h4>Review by User <%= @post.user_id %> <%= time_ago_in_words(@post.created_at) %> ago </h4>
   <img class = "postpic" src = "<%= @post.img_url%>">
   <p><%= @post.content%></p>
   <button type="button" class="btn btn-success" id = "upvotes">Upvotes:<%= @post.upvotes%></button>
@@ -11,4 +12,6 @@
   <!-- Add button/click logic above for upvotes/downvotes. -->
 
 <button type="button" id = "destroy-post" class="btn btn-danger"><%= link_to "Delete this post", post_path(@post.id), method: :delete %></button>
+<button type="button" id = "edit-post" class="btn btn-success"><%= link_to "Edit this post", post_path(@post.id), method: :patch %></button>
+
 

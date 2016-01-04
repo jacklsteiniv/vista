@@ -15,6 +15,20 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes(post_params)
+      flash[:success] = "Post updated"
+      redirect_to @post
+    else
+      render 'edit'
+    end
+  end
+
   def create
   end
 
@@ -23,6 +37,12 @@ class PostsController < ApplicationController
     @post.destroy
     flash[:success] = 'You deleted your post.'
     redirect_to root_path
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:img_url, :user_id,:user_id, :content, :hike_id)
   end
 
 end
