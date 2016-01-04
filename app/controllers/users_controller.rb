@@ -11,9 +11,10 @@ class UsersController < ApplicationController
   end
 
   def create
-
-    if User.new(user_params).save
-       #redirect to signed in
+    @user = User.new(user_params)
+    if @user.save
+      #redirect to signed in
+      log_in @user
       flash[:success] = 'Welcome to Vista!'
       redirect_to user_url(@user)
     else

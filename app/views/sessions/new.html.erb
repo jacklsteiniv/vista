@@ -1,16 +1,19 @@
-<h1>Sign in below.</h1>
+<% provide(:title, "Log in") %>
+<h1>Log in</h1>
 
-<%= form_for @user, url: sessions_path do |f| %>
-
-      <% flash.each do |key,value|  %>
-         <div class="<%= key %>" > <%= value %> </div>
-      <% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: sessions_path) do |f| %>
 
       <%= f.label :email %>
-      <%= f.email_field :email %>
+      <%= f.email_field :email, class: 'form-control' %>
 
       <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.submit "Login" %>
- <% end %>
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+
+    <p>New to Vista? <%= link_to "Sign up now!", new_user_path %></p>
+  </div>
+</div>

@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+
+  include Gravtastic
+  gravtastic
+
   has_secure_password
   attr_accessor :name, :email
 
