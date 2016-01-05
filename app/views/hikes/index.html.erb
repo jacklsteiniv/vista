@@ -4,10 +4,10 @@
 <ul id = "hikes">
 <% @hikes.each do |hike| %>
   <p><%= hike.name %> in <%= hike.city %>, <%= hike.state %><p>
-  <%= link_to "Visit this hike", api_hike_path(hike) %>
+  <%= link_to "Visit this hike", hike_path(hike) %>
   <!-- -->
 <%end%>
 </ul>
 <br>
-<h4>Don't see a hike you've been on? <%= link_to "Add a hike.", new_api_hike_path%></h4>
+<h4>Don't see a hike you've been on? <%= link_to "Add a hike.", new_hike_path%></h4>
 
