@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'api/hikes#index'
+  root 'hikes#index'
 
   resources :users, only: [:index, :show, :new, :edit, :update, :create, :destroy]
 
@@ -15,10 +15,12 @@ Rails.application.routes.draw do
 
   get 'targets/' => 'targets#index', as: :targets
 
-  #Hikes methods - API for routes. The model you interact with
+  #Hikes methods - The model you interact with
+  resources :hikes, only: [:index, :show, :new, :edit, :update, :create, :destroy]
 
+  #api/jack will only render index and show (JSON) for hike data.
   namespace :api do
-    resources :hikes, only: [:index, :show, :new, :edit, :update, :create, :destroy]
+    resources :jack, only: [:index, :show]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
