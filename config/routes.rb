@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # get 'posts/show'
 
   root 'api/hikes#index'
-  resources :users, only: [:new, :create, :index, :show, :edit, :update, :destroy]
+  resources :users, only: [:index, :show, :new, :edit, :update, :create, :destroy]
 
 
   #Sessions methods below
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   #Hikes methods - API for routes. The model you interact with
 
   namespace :api do
-    resources :hikes, only: [:index, :show, :about, :new, :create, :destroy]
+    resources :hikes, only: [:index, :show, :new, :edit, :update, :create, :destroy]
   end
 
   #Posts methods - resources (all 5), make join table for hikes/reviews

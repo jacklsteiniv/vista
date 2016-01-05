@@ -25,13 +25,15 @@ module API
       render template: "hikes/edit"
     end
 
-    private
-
-    def hike_params
-      params.require(:hike).permit(:name, :city, :state, :zip)
+    def update
+      @hike = Hike.find(params[:id])
+      if @hike.update_attributes(hike_params)
+        flash[:success] = "Hike updated"
+        redirect_to api_hikes_path
+      else
+        render 'edit'
+      end
     end
-
-    public
 
     def create
       @hike = Hike.build(hike_params[:hike])
@@ -50,6 +52,12 @@ module API
       @hike.destroy
       flash[:success] = 'You deleted @hike.name'
       redirect_to root_path
+    end
+
+    private
+
+    def hike_params
+      params.require(:hike).permit(:name, :city, :state, :zip)
     end
 
   end

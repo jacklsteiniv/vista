@@ -20,25 +20,30 @@
 #                password_confirmation: password)
 # end
 
-User.delete_all
-Post.delete_all
-Hike.delete_all
+# User.delete_all
+# Post.delete_all
+# Hike.delete_all
 
-User.create!(name:  "Example User",
-             email: "example@railstutorial.org",
-             password:              "foobar",
-             password_confirmation: "foobar",
-             admin: true)
+# User.create!(name:  "Jack Stein",
+#              email: "jacklsteiniv@gmail.com",
+#              password:              "ocosta583",
+#              password_confirmation: "ocosta583",
+#              admin: true)
 
-Hike.create!(name: "Griffith Park Observatory Trail",
-             city: "Los Angeles",
-             state: "CA",
-             zip: 90027)
+# Hike.create!(name: "Eaton Canyon Falls",
+#              city: "Altadena",
+#              state: "CA",
+#              zip: 91001 )
 
-Post.create!(img_url: "http://www.seanbaello.com/wp-content/uploads/2013/02/observatory-run-31.jpg",
-             user_id: 1,
-             content: "This is a great hike for people of all ages. You are rewarded with stunning views of the Los Angeles skyline, the Hollywood sign, and the ocean. Also, lots of dogs! Highly recommended.",
-             hike_id: 1)
+# Post.create!(img_url: "https://upload.wikimedia.org/wikipedia/commons/6/62/Eaton_falls.jpg",
+#              user_id: 204,
+#              content: "This one used to have a waterfall pre-drought. Lots of people, but a solid hike nonetheless.",
+#              hike_id: 7)
+
+# Post.create!(img_url: "http://informedexplorer.com/wp-content/uploads/2013/04/Griffith-Park-Observatory.jpg",
+#              user_id: 205,
+#              content: "Killer views, plenty of different trails to take. Great views of the skyline, the Hollywood sign, and the beaches. Five stars! Oh yeah - dogs!",
+#              hike_id: 6)
 
 # # clean out all current data
 # Hike.delete_all

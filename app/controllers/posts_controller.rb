@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
-  #Only a logged-in user can create or destroy a post.
-  before_action :logged_in_user, only: [:create, :destroy]
+  #Only a logged-in user can create or destroy a post. Add in.
+  before_action :logged_in_user, only: [:destroy]
 
   def index
     @posts = Post.paginate(page: params[:page])
@@ -30,6 +30,14 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post = @user.post.build(post_params)
+      if @post.save
+        redirect_to posts_path
+        flash[:success] = 'You added @post.name!'
+      else
+        render :new
+        flash[:error] = 'Sorry, we could not add your post.'
+      end
   end
 
   def destroy
