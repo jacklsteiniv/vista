@@ -46,9 +46,9 @@ Post.create(img_url: "https://upload.wikimedia.org/wikipedia/commons/6/62/Eaton_
              hike_id: 1)
 
 Post.create(img_url: "http://informedexplorer.com/wp-content/uploads/2013/04/Griffith-Park-Observatory.jpg",
-             user_id: 5hero,
+             user_id: 5,
              content: "Killer views, plenty of different trails to take. Great views of the skyline, the Hollywood sign, and the beaches. Five stars! Oh yeah - dogs!",
-             hike_id: 2)
+            hike_id: 2)
 
 # # clean out all current data
 # Hike.delete_all
