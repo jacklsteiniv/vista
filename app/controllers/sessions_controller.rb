@@ -5,28 +5,28 @@ class SessionsController < ApplicationController
   end
 
   def create
+    # # user = User.find_by(email: params[:session][:email].downcase)
     # user = User.where( email: user_params[:email]).first
 
-    user = User.find_by(email: params[:session][:email].downcase)
+    # if user && user.authenticate(params[:password])
+    #   log_in user
+    #   params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+    #   redirect_back_or user
+    #   flash[:success] = 'You are signed in!'
+    # else
+    #   flash[:danger] = 'Invalid email/password combination'
+    #   redirect_to new_session_path
+    # end
 
-    if user && user.authenticate(user_params)
-      log_in user
-      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_back_or user
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user && user.authenticate(params[:session][:password])
+      session[:user_id] = user.id
+      redirect_to user_path(current_user)
       flash[:success] = 'You are signed in!'
     else
-      flash[:danger] = 'Invalid email/password combination'
-      redirect_to new_session_path
+      flash[:danger] = 'Invalid login credentials - try again!'
+      render :new
     end
-
-  #   user = User.find_by(email: params[:email])
-  #   if user && user.authenticate(params[:password])
-  #     session[:user_id] = user.id
-  #     redirect_to user_path(current_user), notice: 'Logged in!'
-  #   else
-  #     flash[:notice] = 'Invalid login credentials - try again!'
-  #     render :new
-  #   end
   end
 
   def destroy
@@ -38,7 +38,7 @@ class SessionsController < ApplicationController
   private
 
   def user_params
-    params.require(:session).permit(:email, :password)
+    params.require(:user).permit(:email, :password)
   end
 
 end

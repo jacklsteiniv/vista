@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
 protected
-# Not sure if above line is necessary?
+
   def current_user
     # @current_user = User.find 207
     @current_user ||= User.find session[:user_id] if session[:user_id]

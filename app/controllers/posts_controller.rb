@@ -1,7 +1,11 @@
 class PostsController < ApplicationController
+  #Essentially, posts are the 'gated' content on Vista.
+  #A visitor can see hikes to get 'hooked', and then must log in or register
+  #to access the reviews. Reviews = the money-maker.
 
+  before_action :authorize
   #Only a logged-in user can create or destroy a post. Add in.
-  before_action :logged_in_user, only: [:destroy]
+  before_action :logged_in_user, only: [:create, :destroy]
 
   def index
     @posts = Post.paginate(page: params[:page])
@@ -30,7 +34,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = @user.post.build(post_params)
+    @post = current_user.post.build(post_params)
       if @post.save
         redirect_to posts_path
         flash[:success] = 'You added @post.name!'
@@ -50,7 +54,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:img_url, :user_id,:user_id, :content, :hike_id)
+    params.require(:post).permit(:img_url, :user_id, :content, :hike_id)
   end
 
 end

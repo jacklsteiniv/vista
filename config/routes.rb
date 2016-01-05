@@ -1,17 +1,15 @@
 Rails.application.routes.draw do
 
-  # get 'posts/index'
-
-  # get 'posts/show'
-
   root 'api/hikes#index'
+
   resources :users, only: [:index, :show, :new, :edit, :update, :create, :destroy]
 
+  resources :posts, only: [:index, :show, :new, :edit, :update, :create, :destroy]
+  #Tuesday, 1/5: added posts resources under users. A user makes posts.
+  #If you do this, you'll need to rake routes, see new route names, and change accordingly.
 
   #Sessions methods below
-
   resources :sessions, only: [:destroy, :new, :create]
-
 
   #Targets methods
 
@@ -22,11 +20,6 @@ Rails.application.routes.draw do
   namespace :api do
     resources :hikes, only: [:index, :show, :new, :edit, :update, :create, :destroy]
   end
-
-  #Posts methods - resources (all 5), make join table for hikes/reviews
-
-  resources :posts, only: [:index, :show, :new, :edit, :update, :create, :destroy]
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

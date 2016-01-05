@@ -1,12 +1,12 @@
 <% provide(:title, 'All posts') %>
-<h1>All posts</h1>
+<h1>All Reviews</h1>
 
 <%= will_paginate %>
 
 <ul class="posts">
   <% @posts.each do |post| %>
     <h3><%= post.hike.name %></h3>
-    <h4>Review by User <%= post.user_id%> <%= time_ago_in_words(post.created_at) %> ago </h4>
+    <h4>Reviewed <%= time_ago_in_words(post.created_at) %> ago </h4>
     <img class = "postpic" src = "<%= post.img_url%>">
     <button type="button" id = "see-post" class="btn btn-success"><%= link_to "See this review",
     post_path(post.id)%></button>

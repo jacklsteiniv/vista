@@ -11,11 +11,19 @@
           <%= @user.email %>
           <br>
           <%= @user.posts.count %> reviews
-        <br>
-        <img class = "profpic" src = "<%= @user.image_url%>">
+          <br>
+          <img class = "profpic" src = "<%= @user.image_url%>">
       </ul>
       </section>
     </aside>
+  </div>
+  <div class="col-md-8">
+    <% if @user.posts.any? %>
+      <ol class="posts">
+        <%= render 'post' %>
+      </ol>
+      <%= will_paginate 'post' %>
+    <% end %>
   </div>
 </div>
 
