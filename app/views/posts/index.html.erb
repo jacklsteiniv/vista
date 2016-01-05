@@ -5,12 +5,11 @@
 
 <ul class="posts">
   <% @posts.each do |post| %>
-    <h2>Hike ID: <%=post.hike_id %></h2>
-    <h4>Review by User <%= post.user_id %> <%= time_ago_in_words(post.created_at) %> ago </h4>
+    <h3><%= post.hike.name %></h3>
+    <h4>Review by User <%= post.user_id%> <%= time_ago_in_words(post.created_at) %> ago </h4>
     <img class = "postpic" src = "<%= post.img_url%>">
     <button type="button" id = "see-post" class="btn btn-success"><%= link_to "See this review",
     post_path(post.id)%></button>
-    -------------------------------------
   <% end %>
 </ul>
 
