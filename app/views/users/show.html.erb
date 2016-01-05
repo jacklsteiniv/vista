@@ -1,7 +1,6 @@
 <div id = "user-page">
   <% provide(:title, @user.name) %>
   <div class="row">
-    <aside class="col-md-4">
       <section class="user_info">
        <h1><%= @user.name %></h1>
         <br>
@@ -15,15 +14,6 @@
           <img class = "profpic" src = "<%= @user.image_url%>">
       </ul>
       </section>
-    </aside>
-  </div>
-  <div class="col-md-8">
-    <% if @user.posts.any? %>
-      <ol class="posts">
-        <%= render 'posts/post' %>
-      </ol>
-      <%= will_paginate 'posts/post' %>
-    <% end %>
   </div>
 </div>
 
