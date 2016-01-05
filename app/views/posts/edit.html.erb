@@ -4,13 +4,13 @@
 <!-- Referencing the API namespace above. -->
   <div>
     <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+    <%= f.text_field :user_id%>
   </div>
 
+  <!-- Try adding picklist for hike name below. -->
   <div>
-    <%= f.label :hike_id %>
-    <%= f.text_field :hike_id %>
-    <!-- Build in logic for if the name already exists in database; alert and don't add -->
+  <%= f.collection_select :hike_id, Hike.order(:name),:id,:name, include_blank: true %>
+  <!-- Build in logic for if the name already exists in database; alert and don't add -->
   </div>
 
   <div>

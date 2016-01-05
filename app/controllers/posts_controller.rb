@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
       if @post.save
         redirect_to posts_path
-        flash[:success] = 'You added a review!'
+        flash[:success] = "You added review ##{@post.id}!"
       else
         render :new
         flash[:danger] = 'Sorry, we could not add your review.'
@@ -48,14 +48,14 @@ class PostsController < ApplicationController
   def destroy
     @post= Post.find(params[:id])
     @post.destroy
-    flash[:success] = 'You deleted your post.'
+    flash[:success] = 'You deleted your review.'
     redirect_to root_path
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:img_url, :user_id, :content, :hike_id)
+    params.require(:post).permit(:hike_id, :user_id, :img_url, :content)
   end
 
 end

@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     if @user.save
       #redirect to signed in
       log_in @user
-      flash[:success] = 'Welcome to Vista!'
+      flash[:success] = "Welcome to Vista, #{@user.name}!"
       redirect_to user_url(@user)
     else
       flash[:error] = 'Sorry, registration failed'

@@ -1,6 +1,6 @@
 module API
   class HikesController < ApplicationController
-    #Only admins can destroy or add hikes. Everyone can view them.
+    #Only admins can destroy hikes. Everyone can view them.
 
     before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
 
@@ -31,7 +31,7 @@ module API
     def update
       @hike = Hike.find(params[:id])
       if @hike.update_attributes(hike_params)
-        flash[:success] = "Hike updated"
+        flash[:success] = "#{@hike.name} updated"
         redirect_to api_hikes_path
       else
         render 'edit'
@@ -42,7 +42,7 @@ module API
       @hike = Hike.new(hike_params)
       if @hike.save
         redirect_to api_hikes_path
-        flash[:success] = 'You added a new hike!'
+        flash[:success] = "You added #{@hike.name}!"
       else
         render :new
         flash[:error] = 'Sorry, we could not add that hike.'
@@ -53,7 +53,7 @@ module API
     def destroy
       @hike = Hike.find(params[:id])
       @hike.destroy
-      flash[:success] = 'You deleted @hike.name'
+      flash[:success] = "You deleted #{@hike.name}"
       redirect_to root_path
     end
 

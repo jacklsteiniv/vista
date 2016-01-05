@@ -1,10 +1,6 @@
 <!-- If a hike exists, include its name. If not, post.hike_id -->
-  <%if @post.hike.name.exists? %>
-    <h3><%= @post.hike.name %> </h3>
-  <% else %>
-  <h3>Hike # <%= @post.hike_id %> </h3>
-  <% end %>
 
+  <h3>Hike # <%= @post.hike_id %> </h3>
   <h4>Review by <%= User.find(@post.user_id).name %> <%= time_ago_in_words(@post.created_at) %> ago </h4>
   <img class = "postpic" src = "<%= @post.img_url%>">
   <p><%= @post.content%></p>

@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
       redirect_to user_path(current_user)
-      flash[:success] = 'You are signed in!'
+      flash[:success] = "Welcome back to Vista, #{user.name}!"
     else
       flash[:danger] = 'Invalid login credentials - try again!'
       render :new

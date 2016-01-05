@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20160104194917) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string   "img_url"
+    t.string   "img_url", default: "http://etc.usf.edu/clipart/70200/70299/70299_258_b-1_c_lg.gif"
     t.integer  "upvotes",    default: 0
     t.integer  "downvotes",  default: 0
     t.datetime "created_at",             null: false
