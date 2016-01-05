@@ -1,11 +1,11 @@
 <!-- If a hike exists, include its name. If not, post.hike_id -->
 
-  <h3>Hike # <%= @post.hike_id %> </h3>
-  <h4>Review by <%= User.find(@post.user_id).name %> <%= time_ago_in_words(@post.created_at) %> ago </h4>
+  <h3><%= @post.hike.name %> </h3>
+  <h4>Review by <%= User.find(@post.user).name %> <%= time_ago_in_words(@post.created_at) %> ago </h4>
   <img class = "postpic" src = "<%= @post.img_url%>">
   <p><%= @post.content%></p>
   <button type="button" class="btn btn-success" id = "upvotes">Upvotes:<%= @post.upvotes%></button>
-  <!-- When you click upvotes, upvotes +=1  -->
+  <!--When you click upvotes, upvotes +=1  -->
   <button type="button" class="btn btn-danger" id = "downvotes">Downvotes:<%= @post.downvotes%></button>
   <!-- When you click downvotes, downvotes +=1 -->
   <!-- Add button/click logic above for upvotes/downvotes. There's a gem! -->

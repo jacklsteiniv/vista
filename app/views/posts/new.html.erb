@@ -2,17 +2,13 @@
 
 <%= form_for(@post) do |f| %>
 <!-- Referencing the API namespace above. -->
-  <div>
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
-    <!-- Idea: :user_id ||= @user.id; i.e. if a user's id exists, add it. -->
-   <!--  Build in logic for if the name already exists in database; alert and don't add -->
+<!-- NOTE: you want user name to be static. -->
+  <div>User
+  <%= f.collection_select :user_id, User.order(:name),:id,:name, include_blank: false %>
   </div>
 
-  <div>
-    <%= f.label :hike_id %>
-    <%= f.text_field :hike_id %>
-    <!-- Build in logic for if the name already exists in database; alert and don't add -->
+  <div>Hike
+  <%= f.collection_select :hike_id, Hike.order(:name),:id,:name, include_blank: false %>
   </div>
 
   <div>

@@ -20,9 +20,9 @@
   <div class="col-md-8">
     <% if @user.posts.any? %>
       <ol class="posts">
-        <%= render 'post' %>
+        <%= render 'posts/post' %>
       </ol>
-      <%= will_paginate 'post' %>
+      <%= will_paginate 'posts/post' %>
     <% end %>
   </div>
 </div>
