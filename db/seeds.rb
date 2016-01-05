@@ -20,15 +20,15 @@
 #                password_confirmation: password)
 # end
 
-# User.delete_all
+User.delete_all
 # Post.delete_all
 # Hike.delete_all
 
-# User.create!(name:  "Jack Stein",
-#              email: "jacklsteiniv@gmail.com",
-#              password:              "ocosta583",
-#              password_confirmation: "ocosta583",
-#              admin: true)
+User.create!(name:  "Jack Stein",
+             email: "jacklsteiniv@gmail.com",
+             password:              "ocosta583",
+             password_confirmation: "ocosta583",
+             admin: true)
 
 # Hike.create!(name: "Eaton Canyon Falls",
 #              city: "Altadena",

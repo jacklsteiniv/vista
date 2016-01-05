@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   gravtastic
 
   has_secure_password
-  attr_accessor :name, :email, :remember_token
 
   # before_save { self.email = email.downcase }
   validates :name, presence: true, length: {maximum: 50}
