@@ -1,7 +1,10 @@
-<!-- Up here, reference the hike for this post, after you make join table -->
+<!-- If a hike exists, include its name. If not, post.hike_id -->
+  <%if @post.hike.name.exists? %>
+    <h3><%= @post.hike.name %> </h3>
+  <% else %>
+  <h3>Hike # <%= @post.hike_id %> </h3>
+  <% end %>
 
-  <!-- Connect user and hike name here after updating relations -->
-  <h3><%= @post.hike.name %> </h3>
   <h4>Review by <%= User.find(@post.user_id).name %> <%= time_ago_in_words(@post.created_at) %> ago </h4>
   <img class = "postpic" src = "<%= @post.img_url%>">
   <p><%= @post.content%></p>
@@ -9,7 +12,7 @@
   <!-- When you click upvotes, upvotes +=1  -->
   <button type="button" class="btn btn-danger" id = "downvotes">Downvotes:<%= @post.downvotes%></button>
   <!-- When you click downvotes, downvotes +=1 -->
-  <!-- Add button/click logic above for upvotes/downvotes. -->
+  <!-- Add button/click logic above for upvotes/downvotes. There's a gem! -->
 
 <button type="button" id = "destroy-post" class="btn btn-danger"><%= link_to "Delete this post", post_path(@post.id), method: :delete %></button>
 <button type="button" id = "edit-post" class="btn btn-success"><%= link_to "Edit this post", edit_post_path(@post.id) %></button>

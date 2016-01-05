@@ -25,7 +25,7 @@ protected
     unless logged_in?
       store_location
       flash[:danger] = "Please log in."
-      redirect_to login_url
+      redirect_to new_session_path
     end
   end
 end

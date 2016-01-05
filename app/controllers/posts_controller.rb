@@ -34,13 +34,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.post.build(post_params)
+    # @post = current_user.post.build(post_params)
+    @post = Post.new(post_params)
       if @post.save
         redirect_to posts_path
-        flash[:success] = 'You added @post.name!'
+        flash[:success] = 'You added a review!'
       else
         render :new
-        flash[:error] = 'Sorry, we could not add your post.'
+        flash[:danger] = 'Sorry, we could not add your review.'
       end
   end
 
