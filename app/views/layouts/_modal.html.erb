@@ -3,66 +3,61 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-            <h4 class="modal-title" id="myModalLabel">Log in to Vista here.</h4>
+            <h4 class="modal-title" id="myModalLabel">Welcome to Vista.</h4>
             </div>
             <div class="modal-body">
-                <h3>You want to render the log-in form (new session path) here.</h3>
+                <h3>You want to render the log-in form (new session path) and register form (new user path) here. Can toggle between them.</h3>
                 <!-- All of your modal/form stuff goes here. -->
-                <h3>Have an Account?</h3>
 
                 <!-- Trying out an experiment below. -->
                 <div class="modal-body">
     <div class="well">
       <ul class="nav nav-tabs">
         <li class="active"><a href="#login" data-toggle="tab">Login</a></li>
-        <li><a href="#create" data-toggle="tab">Create Account</a></li>
+        <li><a href="#create" data-toggle="tab">Register</a></li>
       </ul>
+
       <div id="myTabContent" class="tab-content">
         <div class="tab-pane active in" id="login">
-          <form class="form-horizontal" action='' method="POST">
-            <fieldset>
-              <div id="legend">
-                <legend class="">Login</legend>
-              </div>
-              <div class="control-group">
-                <!-- Username -->
-                <label class="control-label"  for="username">Username</label>
-                <div class="controls">
-                  <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
-                </div>
-              </div>
+              <!--You want to keep the stuff above so you can toggle between Login and Register. -->
+            <!-- Sessions.new.html.erb below; render as partial. -->
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
 
-              <div class="control-group">
-                <!-- Password-->
-                <label class="control-label" for="password">Password</label>
-                <div class="controls">
-                  <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
-                </div>
-              </div>
+            <%= form_for(:session, url: sessions_path) do |f| %>
 
+                <%= f.label :email %>
+                <%= f.email_field :email, class: 'form-control' %>
 
-              <div class="control-group">
-                <!-- Button -->
-                <div class="controls">
-                  <button class="btn btn-success">Login</button>
-                </div>
-              </div>
-            </fieldset>
-          </form>
+                <%= f.label :password %>
+                <%= f.password_field :password, class: 'form-control' %>
+
+                <%= f.label :remember_me, class: "checkbox inline" do %>
+                <%= f.check_box :remember_me %>
+                <span>Remember me on this computer</span>
+                <% end %>
+
+                <%= f.submit "Log in", class: "btn btn-primary" %>
+            <% end %>
+
+            <p>New to Vista? <%= link_to "Sign up now!", new_user_path %></p>
+            </div>
         </div>
+
+
+        </div>
+
         <div class="tab-pane fade" id="create">
           <form id="tab">
-            <label>Username</label>
-            <input type="text" value="" class="input-xlarge">
-            <label>First Name</label>
-            <input type="text" value="" class="input-xlarge">
-            <label>Last Name</label>
-            <input type="text" value="" class="input-xlarge">
+            <label>Name</label>
+            <input type="text" value="" class="input-medium">
             <label>Email</label>
-            <input type="text" value="" class="input-xlarge">
-            <label>Address</label>
-            <textarea value="Smith" rows="3" class="input-xlarge">
-            </textarea>
+            <input type="text" value="" class="input-large">
+            <br>
+            <label>Password</label>
+            <input type="text" value="" class="input-large">
+            <label>Password Confirmation</label>
+            <input type="text" value="" class="input-large"> --> -->
 
             <div>
               <button class="btn btn-primary">Create Account</button>
