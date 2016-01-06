@@ -6,72 +6,54 @@
             <h4 class="modal-title" id="myModalLabel">Welcome to Vista.</h4>
             </div>
             <div class="modal-body">
-                <h3>You want to render the log-in form (new session path) and register form (new user path) here. Can toggle between them.</h3>
                 <!-- All of your modal/form stuff goes here. -->
-
-                <!-- Trying out an experiment below. -->
                 <div class="modal-body">
-    <div class="well">
-      <ul class="nav nav-tabs">
-        <li class="active"><a href="#login" data-toggle="tab">Login</a></li>
-        <li><a href="#create" data-toggle="tab">Register</a></li>
-      </ul>
+            <div class="well">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#login" data-toggle="tab">Login</a></li>
+                <li><a href="#create" data-toggle="tab">Register</a></li>
+              </ul>
 
-      <div id="myTabContent" class="tab-content">
-        <div class="tab-pane active in" id="login">
-              <!--You want to keep the stuff above so you can toggle between Login and Register. -->
-            <!-- Sessions.new.html.erb below; render as partial. -->
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+              <div id="myTabContent" class="tab-content">
+                <div class="tab-pane active in" id="login">
+                      <!--You want to keep the stuff above so you can toggle between Login and Register. -->
+                    <!-- Sessions.new.html.erb below; render as partial. -->
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
 
-            <%= form_for(:session, url: sessions_path) do |f| %>
+                    <%= form_for(:session, url: sessions_path) do |f| %>
 
-                <%= f.label :email %>
-                <%= f.email_field :email, class: 'form-control' %>
+                        <%= f.label :email %>
+                        <%= f.email_field :email, class: 'form-control' %>
 
-                <%= f.label :password %>
-                <%= f.password_field :password, class: 'form-control' %>
+                        <%= f.label :password %>
+                        <%= f.password_field :password, class: 'form-control' %>
 
-                <%= f.label :remember_me, class: "checkbox inline" do %>
-                <%= f.check_box :remember_me %>
-                <span>Remember me on this computer</span>
-                <% end %>
+                        <%= f.label :remember_me, class: "checkbox inline" do %>
+                        <%= f.check_box :remember_me %>
+                        <span>Remember me on this computer</span>
+                        <% end %>
 
-                <%= f.submit "Log in", class: "btn btn-primary" %>
-            <% end %>
+                        <%= f.submit "Log in", class: "btn btn-primary" %>
+                    <% end %>
+                    <!-- Eventually get rid of this below -->
+                    <p>New to Vista? <%= link_to "Sign up now!", new_user_path %></p>
+                    </div>
+                </div>
 
-            <p>New to Vista? <%= link_to "Sign up now!", new_user_path %></p>
+
+                </div>
+
+                <div class="tab-pane fade" id="create">
+
+                </div>
             </div>
         </div>
-
-
-        </div>
-
-        <div class="tab-pane fade" id="create">
-          <form id="tab">
-            <label>Name</label>
-            <input type="text" value="" class="input-medium">
-            <label>Email</label>
-            <input type="text" value="" class="input-large">
-            <br>
-            <label>Password</label>
-            <input type="text" value="" class="input-large">
-            <label>Password Confirmation</label>
-            <input type="text" value="" class="input-large"> --> -->
-
-            <div>
-              <button class="btn btn-primary">Create Account</button>
-            </div>
-          </form>
-        </div>
-      </div>
     </div>
-  </div>
-            </div>
+</div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+            </div>
     </div>
   </div>
 </div>
