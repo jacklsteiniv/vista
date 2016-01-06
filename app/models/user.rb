@@ -39,9 +39,6 @@ class User < ActiveRecord::Base
     update_attribute(:remember_digest, nil)
   end
 
-  #relations to hike and post models below.
-  #Need join table between hikes and posts to join USERS to HIKES
-
   has_many :posts, dependent: :destroy
   has_many :hikes, through: :posts
 end

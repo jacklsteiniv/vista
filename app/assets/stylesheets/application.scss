@@ -24,9 +24,6 @@ $vistagreen: #DDE0CD;
 
 /* universal */
 
-// NOTE: you're going to break this up into multiple stylesheets,
-//one per page.
-
 body {
   background-color: $vistagrey;
   padding-top: 70px;
@@ -38,6 +35,12 @@ section {
 
 textarea {
   resize: vertical;
+}
+
+.pic {
+  width: $content-width/2;
+  height: $content-width/3.5;
+  border-radius: 10px;
 }
 
 .container {

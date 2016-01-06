@@ -1,30 +1,29 @@
 Rails.application.routes.draw do
 
+  #static pages
+
+  get 'static_pages/home'
   get 'static_pages/about'
-
   get 'static_pages/contact'
+  root 'static_pages#home'
 
-  root 'hikes#index'
+  #users routes
 
-  post "users/new"    => "users#create"
   resources :users, only: [:index, :show, :new, :edit, :update, :create, :destroy]
 
-  resources :posts, only: [:index, :show, :new, :edit, :update, :create, :destroy]
-  #Tuesday, 1/5: added posts resources under users. A user makes posts.
-  #If you do this, you'll need to rake routes, see new route names, and change accordingly.
+  #posts routes
 
-  #Sessions methods below
+  resources :posts, only: [:index, :show, :new, :edit, :update, :create, :destroy]
+
+  #Sessions routes below
   resources :sessions, only: [:destroy, :new, :create]
 
-  #Targets methods
 
-  get 'targets/' => 'targets#index', as: :targets
-
-  #Hikes methods
+  #Hikes routes
 
   resources :hikes, only: [:index, :show, :new, :edit, :update, :create, :destroy]
 
-  #API methods - index, show for hikes.
+  #API routes - index, show for hikes.
 
   #api/jack will only render index and show (JSON) for hike data.
   namespace :api do
