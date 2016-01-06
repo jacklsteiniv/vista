@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  # user = User.new(params.require(:user).permit(:name, :email,:password,:password_confirmation))
+
 protected
 
   def current_user
@@ -28,4 +30,9 @@ protected
       redirect_to new_session_path
     end
   end
+
+  # def user_params
+  #   params.require(:user).permit(:name, :email,:password,:password_confirmation)
+  # end
+
 end

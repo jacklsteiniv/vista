@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'hikes#index'
 
+  post "users/new"    => "users#create"
   resources :users, only: [:index, :show, :new, :edit, :update, :create, :destroy]
 
   resources :posts, only: [:index, :show, :new, :edit, :update, :create, :destroy]
