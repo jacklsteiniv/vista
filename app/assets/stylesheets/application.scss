@@ -68,6 +68,11 @@ button a, input {
   color: black;
 }
 
+.user_info {
+  color: $vistared
+  margin 0 auto;
+}
+
 // .btn-danger a  {
 //   color: black;
 // }
@@ -125,7 +130,7 @@ footer {
 .field_with_errors {
   @extend .has-error;
   .form-control {
-    color: $state-danger-text;
+    color: red;
   }
 }
 
@@ -149,22 +154,16 @@ footer {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
+    border-bottom: 1px solid gray;
   }
 }
 
-// Below scss is for the leanModal for login
-// #lean_overlay {
-//     position: fixed;
-//     z-index:100;
-//     top: 0px;
-//     left: 0px;
-//     height:100%;
-//     width:100%;
-//     background: #000;
-//     display: none;
-// }
-
-// #hidemodal {
-
-// }
+// Restyled the input button in modal for registration to mirror Bootstrap.
+#register input {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+  border-radius: 4px;
+  margin-top: 10px;
+  border: 1px solid transparent;
+}

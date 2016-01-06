@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :logged_in_user, only: [ :update, :destroy]
+  # before_action :logged_in_user, only: [ :update, :destroy]
   # Add :index, :edit into the above list as well - i.e. admin rights.
   before_action :correct_user,   only: [:update]
   # Add :edit above
@@ -26,10 +26,10 @@ class UsersController < ApplicationController
       #redirect to signed in
       log_in @user
       flash[:success] = "Welcome to Vista, #{@user.name}!"
-      redirect_to user_url(@user)
+      redirect_to @user
     else
-      flash[:error] = 'Sorry, registration failed'
-      redirect_to new_user_path
+      flash[:danger] = 'Sorry, registration failed'
+      redirect_to root_path
 
     end
   end
@@ -83,8 +83,5 @@ private
   def admin_user
       redirect_to(root_url) unless current_user.admin?
   end
-
-public
-
 
 end

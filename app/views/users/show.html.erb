@@ -9,9 +9,11 @@
           <br>
           <%= @user.email %>
           <br>
-          <%= @user.posts.count %> reviews
-          <br>
           <img class = "profpic" src = "<%= @user.image_url%>">
+          <br>
+          Number of reviews: <%= @user.posts.count %>
+      <br>
+    Add a review <%= link_to 'Here!', new_post_path %>
       </ul>
       </section>
   </div>

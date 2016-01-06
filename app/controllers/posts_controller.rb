@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
   #Essentially, posts are the 'gated' content on Vista.
   #A visitor can see hikes to get 'hooked', and then must log in or register
-  #to access the reviews. Reviews = the money-maker.
+  #to edit the reviews. Reviews = the money-maker.
 
   before_action :authorize
   #Only a logged-in user can create or destroy a post. Add in.
-  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :logged_in_user, only: [:create, :edit, :update, :destroy]
 
   def index
     @posts = Post.paginate(page: params[:page])

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'hikes#index'
 
+  post "users/new"    => "users#create"
   resources :users, only: [:index, :show, :new, :edit, :update, :create, :destroy]
 
   resources :posts, only: [:index, :show, :new, :edit, :update, :create, :destroy]
@@ -15,8 +16,11 @@ Rails.application.routes.draw do
 
   get 'targets/' => 'targets#index', as: :targets
 
-  #Hikes methods - The model you interact with
+  #Hikes methods
+
   resources :hikes, only: [:index, :show, :new, :edit, :update, :create, :destroy]
+
+  #API methods - index, show for hikes.
 
   #api/jack will only render index and show (JSON) for hike data.
   namespace :api do
