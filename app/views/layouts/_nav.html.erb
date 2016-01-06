@@ -11,13 +11,12 @@
       <li><%= link_to "Users", users_path %></li>
       <!-- This should go under logged_in? eventually -->
   <% else %>
-
-      <li><%= link_to "Register a new account", new_user_path, class: "btn btn-default navbar-btn", type: "button" %></li>
+      <!-- <li><%= link_to "Register a new account", new_user_path, class: "btn btn-default navbar-btn", type: "button" %></li> -->
       <li><a href="#" class="btn btn-sm btn-default"
    data-toggle="modal" data-controls-modal="modal-from-dom" data-backdrop="static" data-keyboard="true" data-target="#basicModal">Login or Register</a></li>
    <!-- This modal above will cover the login and register buttons.
    It will render the modal, hiding and showing login vs. register.-->
   <% end %>
-  <!-- Add if/else for current user = logout, not current user = login -->
+
 
 </ul>

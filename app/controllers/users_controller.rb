@@ -28,8 +28,8 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to Vista, #{@user.name}!"
       redirect_to @user
     else
-      flash[:error] = 'Sorry, registration failed'
-      redirect_to new_user_path
+      flash[:danger] = 'Sorry, registration failed'
+      redirect_to root_path
 
     end
   end
@@ -83,8 +83,5 @@ private
   def admin_user
       redirect_to(root_url) unless current_user.admin?
   end
-
-public
-
 
 end
