@@ -2,13 +2,10 @@
   <li><%= link_to 'Home', root_path %></li>
   <li><%= link_to 'Hikes', hikes_path %></li>
   <li><%= link_to 'Reviews', posts_path %></li>
-  <li><a href="#" class="btn btn-sm btn-success"
-   data-toggle="modal"
-   data-target="#basicModal">Click to open Modal</a></li>
+  <li><a href="#" class="btn btn-sm btn-default"
+   data-toggle="modal" data-controls-modal="modal-from-dom" data-backdrop="static" data-keyboard="true" data-target="#basicModal">Login Modal</a></li>
    <!-- This modal above will cover the login and register buttons.
    It will render the modal, hiding and showing login vs. register.-->
-
-
 
 
   <% if logged_in?  %>
