@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   before_action :authorize
 
-  before_action :logged_in_user, only: [:create, :destroy, :edit, :update]
+  before_action :logged_in_user, only: [:create, :destroy]
 
   def index
     @posts = Post.paginate(page: params[:page])
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
     # Errors with this currently. May have to do w/ user id and hike id.
     @post = Post.new(post_params)
       if @post.save
-        redirect_to posts_path
+        redirect_to root_path
         flash[:success] = "You added review ##{@post.id}!"
       else
         render :new
@@ -55,7 +55,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:hike_id, :user_id, :img_url, :content)
+    params.require(:post).permit(:img_url, :content)
   end
 
 end

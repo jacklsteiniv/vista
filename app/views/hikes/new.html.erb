@@ -1,11 +1,9 @@
 <h1>Add a hike below!</h1>
 
 <%= form_for(@hike) do |f| %>
-<!-- Referencing the API namespace above. -->
   <div>
     <%= f.label :name %>
     <%= f.text_field :name %>
-    <!-- Build in logic for if the name already exists in database; alert and don't add -->
   </div>
 
   <div>

@@ -3,24 +3,23 @@
 <%= form_for(@post) do |f| %>
 <!-- Only the current_user can review the hike. -->
   <div>Review by <%=current_user.name%>
-    <%= f.hidden_field :user_id, include_blank: false %>
+  <%= f.hidden_field :user_id%>
   </div>
 
   <!-- Everything below is dynamic. -->
   <div>Hike
-  <%= f.collection_select :hike_id, Hike.order(:name),:id,:name, include_blank: false %>
-  <%= f.hidden_field :hike_id, include_blank: false %>
+  <%= f.collection_select :hike_id, Hike.order(:name),:id,:name %>
+  <%= f.hidden_field :hike_id, include_blank: false%>
   </div>
 
   <div>
     <%= f.label :img_url %>
-    <%= f.text_field :img_url, default: "http://hiketricities.com/wp-content/uploads/2011/11/hiking-symbol.gif" %>
+    <%= f.text_field :img_url%>
   </div>
 
   <div>
     <%= f.label :content %>
-    <%= f.text_field :content, :style => "width: 200px; height: 100px" %>
+    <%= f.text_field :content, :style => "width: 200px; height: 100px"%>
   </div>
-
   <button type="button" id = "add-post" class="btn btn-success" ><%= f.submit %></button>
 <% end %>
