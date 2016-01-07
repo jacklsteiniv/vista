@@ -2,7 +2,7 @@
 <h3>Location: <%=@hike.city%>, <%=@hike.state%> <%=@hike.zip%></h3>
 <br>
 
-<!-- Add in 'barometer' API weather references here. -->
+<!-- Added in 'barometer' API weather references here. -->
 <h3><em>Current conditions:</em></h3>
 <h4>Temperature: <%=  Barometer.new(@hike.city).measure.current.temperature %>&deg </h4>
 <h4>Sunrise: <%= Barometer.new(@hike.city).measure.current.sun.rise %></h4>
@@ -22,6 +22,7 @@
 edit_hike_path(@hike.id)%></button>
 
 <% end %>
+
 
 
 

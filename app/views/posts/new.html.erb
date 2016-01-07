@@ -8,7 +8,7 @@
 
 
   <!-- Everything below is dynamic. -->
-  <div>Hike
+  <div><%=@post.hike%>
   <%= f.collection_select :hike_id, Hike.order(:name),:id,:name %>
   </div>
 

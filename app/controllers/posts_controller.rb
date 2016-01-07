@@ -34,7 +34,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    binding.pry
+    # binding.pry
     # Errors with this currently. May have to do w/ user id and hike id.
     @post = Post.new(post_params)
       if @post.save
