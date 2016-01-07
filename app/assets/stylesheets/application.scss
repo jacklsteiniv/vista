@@ -59,6 +59,7 @@ textarea {
 
 .user-page {
   color: red;
+  text-align: center;
 }
 
 .postpic {
@@ -153,6 +154,9 @@ footer {
   }
 }
 
+#admin {
+  color: black;
+}
 // Restyled the input button in modal for registration to mirror Bootstrap.
 #register input {
   color: #fff;

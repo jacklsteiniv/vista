@@ -2,9 +2,6 @@ class User < ActiveRecord::Base
 
   attr_accessor :remember_token
 
-  include Gravtastic
-  gravtastic
-
   has_secure_password
 
   # before_save { self.email = email.downcase }

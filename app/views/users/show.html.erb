@@ -5,15 +5,17 @@
        <h1><%= @user.name %></h1>
         <br>
        <ul>
-          User <%= @user.id %>
+          <% if @user.admin? %>
+           <h4><span id = "admin"><em>Administrator</em></span></h4>
+          <%end%>
           <br>
-          <%= @user.email %>
+          <h4>Contact at: <%= @user.email %></h4>
           <br>
           <img class = "profpic" src = "<%= @user.image_url%>">
           <br>
-          Add a review <%= link_to 'Here!', new_post_path %>
+          <h4>Add a review <%= link_to 'Here!', new_post_path %></h4>
           <br>
-          Total number of reviews: <%= @posts.count %>
+          <h4>Total number of reviews: <%= @posts.count %></h4>
           <br>
       </ul>
       </section>
