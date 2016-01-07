@@ -1,8 +1,8 @@
 class HikesController < ApplicationController
     #Only admins can destroy and manipulate hikes. Everyone can view them.
     #Only logged-in users can create hikes.
-    before_action :admin_user,     only: [:destroy, :create, :edit, :update]
-    before_action :logged_in_user, only: :new
+    # before_action :admin_user,     only: [:destroy, :create, :edit, :update]
+    before_action :logged_in_user, only: [:new, :create]
 
     def index
       @hikes = Hike.all
@@ -42,7 +42,7 @@ class HikesController < ApplicationController
     def create
       @hike = Hike.new(hike_params)
       if @hike.save
-        redirect_to api_hikes_path
+        redirect_to hikes_path
         flash[:success] = "You added #{@hike.name}!"
       else
         render :new
@@ -61,7 +61,7 @@ class HikesController < ApplicationController
     private
 
     def hike_params
-      params.require(:hike).permit(:name, :city, :state, :zip)
+      params.require(:hike).permit(:name, :city, :state, :zip, :user_id)
     end
 
   end

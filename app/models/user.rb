@@ -43,5 +43,5 @@ class User < ActiveRecord::Base
   end
 
   has_many :posts, dependent: :destroy
-  has_many :hikes, dependent: :destroy
+  has_many :hikes, through: :posts
 end
