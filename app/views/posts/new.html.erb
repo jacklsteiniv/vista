@@ -1,12 +1,12 @@
 <h1>Add a review below!</h1>
 
 <%= form_for(@post) do |f| %>
-<!-- Referencing the API namespace above. -->
-<!-- NOTE: you want user name to be static. -->
-  <div>User
-  <%= f.collection_select :user_id, User.order(:name),:id,:name, include_blank: false %>
+<!-- Only the current_user can review the hike. -->
+  <div>Review by <%=current_user.name%>
+    <%= f.hidden_field :user_id, include_blank: false %>
   </div>
 
+  <!-- Everything below is dynamic. -->
   <div>Hike
   <%= f.collection_select :hike_id, Hike.order(:name),:id,:name, include_blank: false %>
   </div>

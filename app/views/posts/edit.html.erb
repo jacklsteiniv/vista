@@ -1,15 +1,15 @@
 <h1>Edit your review below.</h1>
 
 <%= form_for(@post) do |f| %>
-<!-- Referencing the API namespace above. -->
-<!-- NOTE: you want the user name to be static. -->
-  <div>User
-    <%= f.collection_select :user_id, User.order(:name),:id,:name, include_blank: false %>
+  <!-- The reviewer and reviewed hike are static. -->
+  <!-- Only the reviewer can edit the review. -->
+
+  <div>Reviewed by <%=@post.user.name%>
+    <%= f.hidden_field :user_id, include_blank: false %>
   </div>
-<!-- NOTE: you want the hike name to be static. -->
-  <!-- Try adding picklist for hike name below. -->
-  <div>Hike
-    <%= f.collection_select :hike_id, Hike.order(:name),:id,:name, include_blank: false %>
+
+  <div>Hike: <%=@post.hike.name%>
+    <%= f.hidden_field :hike_id, include_blank: false %>
   </div>
 
   <div>
@@ -19,7 +19,7 @@
 
   <div>
     <%= f.label :content %>
-    <%= f.text_field :content, :style => "width: 300px; height: 200px" %>
+    <%= f.text_field :content, :style => "width: 200px; height: 100px" %>
   </div>
 
  <!--  Also, add in a label referencing the hike! I.e. review.hike
