@@ -1,8 +1,8 @@
 class HikesController < ApplicationController
-    #Only admins can destroy and manipulate hikes. Everyone can view them.
-    #Only logged-in users can create hikes.
+    #Only admins can destroy and manipulate hikes. Everyone can view the index.
+    #Only logged-in users can create and show hikes.
     # before_action :admin_user,     only: [:destroy, :create, :edit, :update]
-    before_action :logged_in_user, only: [:new, :create]
+    before_action :logged_in_user, only: [:new, :show, :create]
 
     def index
       @hikes = Hike.all

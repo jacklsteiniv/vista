@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   before_action :authorize
   #Only a logged-in user can create or destroy a post. Add in.
-  before_action :logged_in_user, only: [:create, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:edit, :update]
 
   def index
     @posts = Post.paginate(page: params[:page])
@@ -54,7 +54,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:user_id, :hike_id, :img_url, :content)
+    params.require(:post).permit(:img_url, :content)
   end
 
 end
