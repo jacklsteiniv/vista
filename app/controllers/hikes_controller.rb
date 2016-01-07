@@ -15,11 +15,8 @@ class HikesController < ApplicationController
       @hike = Hike.find(params[:id])
       # Try adding in barometer API instance variables and call here.
 
-      @zip = @hike.zip
       render template: "hikes/show"
-      @barometer = Barometer.new('Los Angeles')
-      @weather = @barometer.measure
-      @weathernow = @weather.current.temperature
+      @barom = Barometer.new(@hike.city).measure.current
     end
 
     def about
