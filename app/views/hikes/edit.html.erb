@@ -1,7 +1,7 @@
 <h1>Edit a hike below (with admin privileges)*</h1>
 
-<%= form_for([:api, @hike]) do |f| %>
-<!-- Referencing the API namespace above. -->
+<%= form_for(@hike) do |f| %>
+
   <div>
     <%= f.label :name %>
     <%= f.text_field :name %>
