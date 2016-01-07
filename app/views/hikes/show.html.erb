@@ -5,10 +5,11 @@
 
 <h3>Taken this hike? <%=link_to "Add a review.", new_post_path%></h3>
 <!-- If you are the user who added this hike, can delete. Add auth here -->
-
+<% if current_user.admin? %>
 <button type="button" id = "destroy-hike" class="btn btn-danger"><%= link_to "Delete this hike", hike_path(@hike.id), method: :delete %></button>
 <button type="button" id = "edit-hike" class="btn btn-success"><%= link_to "Edit this hike",
 edit_hike_path(@hike.id)%></button>
+<% end %>
 
 
 

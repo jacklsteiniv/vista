@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   #A visitor can see hikes to get 'hooked', and then must log in or register
   #to edit the reviews. Reviews = the money-maker.
 
-  before_action :authorize
+  # before_action :authorize
   #Only a logged-in user can create or destroy a post. Add in.
   before_action :logged_in_user, only: [:create, :edit, :update, :destroy]
 
@@ -54,7 +54,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:hike_id, :user_id, :img_url, :content)
+    params.require(:post).permit(:user_id, :hike_id, :img_url, :content)
   end
 
 end
