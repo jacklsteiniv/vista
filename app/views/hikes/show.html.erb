@@ -3,7 +3,9 @@
 <br>
 
 <!-- Add in 'barometer' API weather references here. -->
-<h4>Current conditions: <%= @weather %> degrees C </h4>
+<h3><em>Current conditions:</em></h3>
+<h4>Temperature: <%=  Barometer.new(@hike.city).measure.current.temperature %> </h4>
+
 
 
 <h3>Want to explore? <%=link_to "See reviews", posts_path%></h3>
@@ -14,9 +16,7 @@
 <button type="button" id = "destroy-hike" class="btn btn-danger"><%= link_to "Delete this hike", hike_path(@hike.id), method: :delete %></button>
 <button type="button" id = "edit-hike" class="btn btn-success"><%= link_to "Edit this hike",
 edit_hike_path(@hike.id)%></button>
-<% else %>
-  <% redirect_to root_path %>
-  <%= flash[:danger] = 'Log in or register to view hikes.' %>
+
 <% end %>
 
 
