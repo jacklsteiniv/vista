@@ -3,14 +3,15 @@
 <%= form_for(@post) do |f| %>
 <!-- Only the current_user can review the hike. -->
   <div>Review by <%=current_user.name%>
-  <%= f.hidden_field :user_id%>
+  <%= f.hidden_field :user_id, value: current_user.id %>
   </div>
+
 
   <!-- Everything below is dynamic. -->
   <div>Hike
   <%= f.collection_select :hike_id, Hike.order(:name),:id,:name %>
-  <%= f.hidden_field :hike_id, include_blank: false%>
   </div>
+
 
   <div>
     <%= f.label :img_url %>

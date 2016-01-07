@@ -22,7 +22,6 @@ $vistared: #E05151;
 $vistagrey: #C7D0D5;
 $vistagreen: #DDE0CD;
 
-/* universal */
 
 body {
   background-color: $vistagrey;
@@ -51,7 +50,6 @@ textarea {
   margin-bottom: 10px;
 }
 
-// End Hartl Bootstrap recs
 
 * {
   font-family: Futura;
@@ -106,14 +104,6 @@ footer {
   color: white;
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
-.gravatar_edit {
-  margin-top: 15px;
-}
 
 #error_explanation {
   color: red;
