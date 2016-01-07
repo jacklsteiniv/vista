@@ -4,6 +4,8 @@ class HikesController < ApplicationController
     # before_action :admin_user,     only: [:destroy, :create, :edit, :update]
     before_action :logged_in_user, only: [:new, :show, :create]
 
+    require 'barometer'
+
     def index
       @hikes = Hike.all
       render template: "hikes/index"
@@ -11,7 +13,13 @@ class HikesController < ApplicationController
 
     def show
       @hike = Hike.find(params[:id])
+      @zip = @hike.zip
       render template: "hikes/show"
+
+      # Try adding in barometer API call here.
+      @barometer = Barometer.new('Los Angeles')
+      @weather = @barometer.measure
+      @weathernow = @weather.current.temperature
     end
 
     def about

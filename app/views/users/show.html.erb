@@ -12,9 +12,13 @@
           <h4>Contact at: <%= @user.email %></h4>
           <br>
           <img class = "profpic" src = "<%= @user.image_url%>">
+          <% if current_user?(@user) %>
           <br>
           <h4>Add a review <%= link_to 'Here!', new_post_path %></h4>
           <br>
+          <h4><%= link_to "Delete my account", @user, method: :delete,
+          data: { confirm: "You sure?" } %></h4>
+          <%end%>
           <h4>Total number of reviews: <%= @posts.count %></h4>
           <br>
       </ul>

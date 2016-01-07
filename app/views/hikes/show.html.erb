@@ -1,6 +1,11 @@
 <h2><%=@hike.name%><h2>
 <h3>Location: <%=@hike.city%>, <%=@hike.state%> <%=@hike.zip%></h3>
 <br>
+
+<!-- Add in 'barometer' API weather references here. -->
+<h4>Current conditions: <%= @weather %> degrees C </h4>
+
+
 <h3>Want to explore? <%=link_to "See reviews", posts_path%></h3>
 
 <h3>Taken this hike? <%=link_to "Add a review.", new_post_path%></h3>

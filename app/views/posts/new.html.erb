@@ -9,11 +9,12 @@
   <!-- Everything below is dynamic. -->
   <div>Hike
   <%= f.collection_select :hike_id, Hike.order(:name),:id,:name, include_blank: false %>
+  <%= f.hidden_field :hike_id, include_blank: false %>
   </div>
 
   <div>
     <%= f.label :img_url %>
-    <%= f.text_field :img_url %>
+    <%= f.text_field :img_url, default: "http://hiketricities.com/wp-content/uploads/2011/11/hiking-symbol.gif" %>
   </div>
 
   <div>
