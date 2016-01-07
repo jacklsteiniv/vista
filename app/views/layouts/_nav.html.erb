@@ -6,8 +6,8 @@
 
   <% if logged_in?  %>
   <li><%= link_to 'Users', users_path %></li>
-  <li><%= link_to('Your profile', user_path(current_user), class: "btn btn-default navbar-btn", type: "button") if params[:controller] != "users" %></li>
   <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+  <li><%= link_to('Your profile', user_path(current_user), class: "btn btn-default navbar-btn", type: "button") if params[:controller] != "users" %></li>
   <li><%= link_to 'Log out', session_path(current_user), class: "btn btn-default navbar-btn", type: "button", method: :delete %></li>
   <% else %>
       <li><a href="#" class="btn btn-sm btn-default"
