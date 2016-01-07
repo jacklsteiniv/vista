@@ -5,23 +5,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # # user = User.find_by(email: params[:session][:email].downcase)
-    # user = User.where( email: user_params[:email]).first
-
-    # if user && user.authenticate(params[:password])
-    #   log_in user
-    #   params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-    #   redirect_back_or user
-    #   flash[:success] = 'You are signed in!'
-    # else
-    #   flash[:danger] = 'Invalid email/password combination'
-    #   redirect_to new_session_path
-    # end
-
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
       remember user
+      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       redirect_to user_path(current_user)
       flash[:success] = "Welcome back to Vista, #{user.name}!"
     else
@@ -31,7 +19,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    log_out if logged_in?
     redirect_to root_path
   end
 

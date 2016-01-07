@@ -11,11 +11,22 @@
           <br>
           <img class = "profpic" src = "<%= @user.image_url%>">
           <br>
-          Number of reviews: <%= @user.posts.count %>
-          <br>
           Add a review <%= link_to 'Here!', new_post_path %>
+          <br>
+          Total number of reviews: <%= @posts.count %>
+          <br>
       </ul>
       </section>
+      <% if @posts.any? %>
+      <ol class="post">
+      <h2><%= @user.name %> reviewed: </h2>
+      <% @posts.each do |post| %>
+        <h3><%= post.hike.name %></h3>
+        <h4><img class = "postpic" src = "<%= post.img_url%>"></h4>
+        <h4><%= link_to 'Read on', post_path(post)%></h4>
+      <% end %>
+      </ol>
+    <% end %>
   </div>
 </div>
 

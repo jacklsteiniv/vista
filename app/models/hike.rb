@@ -1,5 +1,8 @@
 class Hike < ActiveRecord::Base
-  # Need a join table to link a hike with a post
-  has_many :posts
+  validates :user_id, presence: true
+
+  has_many :posts, dependent: :destroy
   has_many :users, through: :posts
+
+  default_scope -> { order(created_at: :desc) }
 end

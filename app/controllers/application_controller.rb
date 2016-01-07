@@ -15,8 +15,8 @@ protected
 
   def authorize
     unless current_user
-      flash[:error] = "Log in to view this page"
-      redirect_to new_session_path
+      flash[:danger] = "Log in to view this page"
+      redirect_to root_path
     end
   end
 
@@ -25,7 +25,7 @@ protected
     unless logged_in?
       store_location
       flash[:danger] = "Please log in."
-      redirect_to new_session_path
+      redirect_to root_path
     end
   end
 
