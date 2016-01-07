@@ -21,10 +21,6 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    if current_user != @post.user
-      flash[:danger] = "You can't edit someone else's post."
-      redirect_to posts_path
-    end
   end
 
   def update
@@ -49,15 +45,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    if current_user != @post.user
-      flash[:danger] = "You can't delete someone else's post."
-      redirect_to posts_path
-    else
     @post= Post.find(params[:id])
     @post.destroy
     flash[:success] = 'You deleted your review.'
     redirect_to root_path
-    end
   end
 
   private

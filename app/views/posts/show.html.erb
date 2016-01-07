@@ -9,9 +9,10 @@
   <button type="button" class="btn btn-danger" id = "downvotes">Downvotes:<%= @post.downvotes%></button>
   <!-- When you click downvotes, downvotes +=1 -->
   <!-- Add button/click logic above for upvotes/downvotes. There's a gem! -->
-
+<% if current_user == @post.user %>
 <button type="button" id = "destroy-post" class="btn btn-danger"><%= link_to "Delete this post", post_path(@post.id), method: :delete %></button>
 <button type="button" id = "edit-post" class="btn btn-success"><%= link_to "Edit this post", edit_post_path(@post.id) %></button>
+<% end %>
 
 
 <!-- Add this into 'review by User': User.find(@post.user_id) -->
