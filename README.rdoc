@@ -1,16 +1,65 @@
 =Vista
 
-==Introduction
+===Summary
+With Vista, I set out to build an app that people could use to
+find hiking trails, reviews, and other hikers in their area. As an avid
+hiker myself, I found that it can be difficult to find sites that compile
+hike reviews and photos, and wanted to contribute to this community.
+
+===Technologies
+
+I built Vista using HTML5, CSS3, and Ruby on a Rails framework. I also
+incorporated Bootstrap (including jQuery) for styling and formatting. PostgresSQL
+is the relational database used. I also used the Barometer gem
+to access various weather database APIs (please see 'Gems/sources' section for
+more details.)
+
+I used 3 models: the User, Hike (the primary object of focus),
+and Posts (that allow users to review various hikes.)
+Each of these 3 models uses RESTful routing and follows the CRUD
+framework.
+
+===Installation
+
+The app can be rendered in the browser at Heroku (please see below)
+
+===Links
+
+The app is deployed online at https://vista-jack-stein.herokuapp.com.
+
+You can also visit my GitHub repository at https://github.com/jacklsteiniv/vista
+
+To see user stories and bugs/fixes, please visit my Trello board
+at https://trello.com/b/J0Ih5lLx/ga-wdi-project-2-vista.
+
+===Wireframing
+
+Below are a couple pictures from the wireframing/planning process.
 
 
-==Synopsis
-
-==Technologies
-
-==Installation
-
-==Links
 
 ==Unsolved Problems/Consideration
 
+The following are additions I would like to make to a future
+iteration of Vista:
+
+(1.) Upvotes/downvotes, possibly as a fourth model, so that users
+can agree/disagree with one another's posts.
+
+(2.) A 'hiking calendar' where users can see hikes that others
+will be attending in the area.
+
+(3.) A rating system, where users can rate each hike on various
+factors.
+
 ==Sources/Gems/Thanks
+
+Huge thanks to Mark Gangl and the Barometer gem, which I utilized:
+
+https://github.com/attack/barometer
+
+This was very useful for pulling in real-time weather data, to help
+users of Vista determine what a good time would be to hike that day
+(using factors such as wind, temperature, forecast, sunrise/sunset, etc.)
+
+
