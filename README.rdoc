@@ -36,7 +36,9 @@ at https://trello.com/b/J0Ih5lLx/ga-wdi-project-2-vista.
 
 Below are a couple pictures from the wireframing/planning process.
 
+![Alt text](https://github.com/jacklsteiniv/vista/blob/master/app/assets/images/wireframes_vista_1.JPG "Wireframe 1")
 
+![Alt text](https://github.com/jacklsteiniv/vista/blob/master/app/assets/images/wireframes_vista_2.JPG "Wireframe 2")
 
 ==Unsolved Problems/Consideration
 
