@@ -38,20 +38,20 @@ Hike.create(name: "Eaton Canyon Falls",
              state: "CA",
              zip: 91001)
 
-Hike.create(name: "Griffith-Park-Observatory",
-             city: "Los Feliz",
+Hike.create(name: "Griffith Park Observatory",
+             city: "Los Angeles",
              state: "CA",
              zip: 90027)
 
-Post.create(img_url: "https://upload.wikimedia.org/wikipedia/commons/6/62/Eaton_falls.jpg",
-             user_id: 5,
-             content: "This one used to have a waterfall pre-drought. Lots of people, but a solid hike nonetheless.",
-             hike_id: 3)
+# Post.create(img_url: "https://upload.wikimedia.org/wikipedia/commons/6/62/Eaton_falls.jpg",
+#              user_id: 1,
+#              content: "This one used to have a waterfall pre-drought. Lots of people, but a solid hike nonetheless.",
+#              hike_id: 1)
 
-Post.create(img_url: "http://informedexplorer.com/wp-content/uploads/2013/04/Griffith-Park-Observatory.jpg",
-             user_id: 6,
-             content: "Killer views, plenty of different trails to take. Great views of the skyline, the Hollywood sign, and the beaches. Five stars! Oh yeah - dogs!",
-            hike_id: 4)
+# Post.create(img_url: "http://informedexplorer.com/wp-content/uploads/2013/04/Griffith-Park-Observatory.jpg",
+#              user_id: 2,
+#              content: "Killer views, plenty of different trails to take. Great views of the skyline, the Hollywood sign, and the beaches. Five stars! Oh yeah - dogs!",
+#             hike_id: 2)
 
 # # clean out all current data
 # Hike.delete_all
