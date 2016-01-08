@@ -1,3 +1,16 @@
-== Vista
+=== Vista
+
+==Introduction
 
 
+==Synopsis
+
+==Technologies
+
+==Installation
+
+==Links
+
+==Unsolved Problems/Consideration
+
+==Sources/Gems/Thanks
