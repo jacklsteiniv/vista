@@ -36,11 +36,14 @@ textarea {
   resize: vertical;
 }
 
-.pic {
+.pic, img {
   width: $content-width/2;
   height: $content-width/3.5;
   border-radius: 10px;
+  margin-left: 50px; //try
 }
+
+
 
 .container {
   text-align: center;
@@ -64,6 +67,10 @@ textarea {
   width: $content-width/2;
   border-radius: 8px;
   margin: 30px;
+}
+
+.profpic {
+  width: 200px;
 }
 
 button a, input {
