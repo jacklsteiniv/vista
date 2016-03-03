@@ -5,8 +5,8 @@
 <!-- Added in 'barometer' API weather references here. -->
 <h3><em>Current conditions:</em></h3>
 <h4>Temperature: <%=  Barometer.new(@hike.city).measure.current.temperature %>&deg </h4>
-<h4>Sunrise: <%= Barometer.new(@hike.city).measure.current.sun.rise %></h4>
-<h4>Sunset: <%= Barometer.new(@hike.city).measure.current.sun.set %></h4>
+<h4>Sunrise: <%= Barometer.new(@hike.city).measure.current.sun.rise.strftime("%Y %m %d") %></h4>
+<h4>Sunset: <%= Barometer.new(@hike.city).measure.current.sun.set.strftime("%Y %m %d") %></h4>
 <h4>Visibility: <%=Barometer.new(@hike.city).measure.current.visibility%></h4>
 <h4>Wind/wind chill: <%=Barometer.new(@hike.city).measure.current.wind%></h4>
 <br>

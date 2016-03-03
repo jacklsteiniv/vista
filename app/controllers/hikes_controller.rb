@@ -16,7 +16,7 @@ class HikesController < ApplicationController
       # Try adding in barometer API instance variables and call here.
 
       render template: "hikes/show"
-      @barom = Barometer.new(@hike.city).measure.current
+      # @barom = Barometer.new;
     end
 
     def about
