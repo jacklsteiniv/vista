@@ -8,9 +8,9 @@ hike reviews and photos, and wanted to contribute to this community.
 
 ===Technologies
 
-I built Vista using HTML5, CSS3, and Ruby on a Rails framework. I also
-incorporated Bootstrap (including jQuery) for styling and formatting. PostgresSQL
-is the relational database used. I also used the Barometer gem
+I built Vista using HTML5, CSS3, and the Ruby on Rails framework. I also
+incorporated Bootstrap (including jQuery) for styling and formatting. PostgreSQL
+is the relational database I used. I also used the Barometer gem
 to access various weather database APIs (please see 'Gems/sources' section for
 more details.)
 
